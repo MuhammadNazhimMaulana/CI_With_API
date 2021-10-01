@@ -1,0 +1,422 @@
+/* Link Font */
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Righteous&family=Roboto+Condensed&family=Ubuntu&display=swap");
+
+/* font-family: 'Lato', sans-serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Righteous', cursive;
+font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Ubuntu', sans-serif; */
+
+body {
+  padding: 0%;
+  margin: 0%;
+  font-family: "Lato";
+}
+
+.navbar-brand {
+  font-family: "Pacifico";
+  font-size: 35px;
+  color: steelblue !important;
+}
+
+.nav-link {
+  font-size: 16px;
+  margin: 15px;
+  color: black !important;
+  font-family: "Roboto Condensed";
+}
+
+.nav-link:hover {
+  color: steelblue !important;
+}
+
+.active {
+  color: steelblue !important;
+}
+
+.menu-right-btn {
+  padding: 13px 46px;
+  margin-right: 4%;
+  background-color: transparent;
+  transition: all 300ms ease-in;
+}
+
+.menu-right-btn:hover {
+  color: white;
+  background-color: steelblue;
+}
+
+/* Bagian Main */
+
+.site-content {
+  background-color: steelblue;
+}
+
+.site-title,
+.site-desc {
+  color: white;
+  font-family: "Righteous";
+}
+
+.site-title {
+  margin-top: 30%;
+  margin-bottom: 6%;
+  font-size: 50px;
+}
+
+.site-desc {
+  font-size: 14px;
+  padding-left: 5%;
+}
+
+.site-btn_1 {
+  margin-left: 20%;
+  background-color: black;
+  color: white;
+}
+
+.site-btn_2 {
+  background-color: white;
+}
+
+.site-btn_1,
+.site-btn_2 {
+  margin-top: 5%;
+  margin-bottom: 40%;
+}
+
+/* section 1 */
+
+.section-1 .heading-1 {
+  margin-top: 8%;
+}
+
+.section-1 .heading-2 {
+  margin-bottom: 5%;
+  font-size: 39px;
+}
+
+.section-1 .para-1 {
+  width: 60%;
+  margin-left: 20%;
+  margin-bottom: 5%;
+}
+
+.section-1 .card-text,
+.para-1 {
+  color: rgba(0, 0, 0, 0.59);
+}
+
+.section-1 {
+  margin-bottom: 8%;
+}
+
+.card {
+  width: 20rem;
+}
+
+/* Section 2 */
+
+.section-2 .container-fluid {
+  background-color: tomato;
+}
+
+.section-2 .heading-1 {
+  margin-top: 20%;
+  margin-bottom: 4%;
+  font-family: "Righteous";
+  width: 80%;
+  color: whitesmoke;
+}
+
+.section-2 .para {
+  width: 80%;
+  font-family: "Ubuntu";
+  color: whitesmoke;
+  margin-bottom: 7%;
+}
+
+.section-2 .btn {
+  margin-bottom: 15%;
+  width: 30%;
+  padding: 2%;
+}
+
+/* section 3 */
+
+.section-3 {
+  margin-top: 7%;
+}
+
+.section-3 i {
+  color: steelblue;
+}
+
+.section-3 p {
+  color: rgba(0, 0, 0, 0.59);
+}
+
+/* Section 4 */
+
+.section-4 {
+  margin-top: 8%;
+}
+
+.section-4 .row .col-md-7,
+.col-md-5 {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.section-4 a {
+  color: steelblue;
+  font-size: 40px;
+  text-decoration: none;
+}
+
+.section-4 .para-1 {
+  color: white;
+  font-family: "Roboto Condensed";
+  margin-top: 7%;
+  font-size: 23;
+}
+
+/* Footer */
+.social i {
+  color: steelblue;
+  font-size: 20px;
+}
+
+/* Tampilan Phone */
+
+@media screen and (max-width: 768px) {
+  .section-1 .card {
+    width: 14rem;
+  }
+
+  .section-4 .col-md-7 img {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .site-content .site-title {
+    font-size: 30px;
+    padding-left: 15%;
+  }
+
+  .site-content .site-btn_2 {
+    display: none;
+  }
+
+  .site-content .site-btn_1 {
+    margin-left: 15%;
+  }
+
+  .section-1 .heading-1,
+  .section-1 .heading-2 {
+    font-size: 25px;
+  }
+
+  .section-1 .col-md-4 {
+    padding: 5%;
+    margin-left: 8%;
+  }
+
+  .section-1 .card {
+    width: 15rem;
+  }
+
+  .section-4 .col-md-5 {
+    padding: 0% 15%;
+  }
+
+  footer input[type="button"] {
+    margin-top: 10%;
+  }
+}
+
+/* Konten */
+.konten {
+  width: 90%;
+  margin: 30px auto 30px;
+}
+
+.konten .konten-utama {
+  width: 70%;
+  float: left;
+}
+
+.konten .konten-utama .postingan {
+  width: 95%;
+  height: 270px;
+  margin: 25px auto;
+  border-radius: 5px;
+  background: steelblue;
+  position: relative;
+}
+
+.konten .konten-utama .postingan .read-more {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: 1px solid steelblue;
+  border-radius: 0px;
+  color: steelblue;
+}
+
+.konten .konten-utama .postingan .read-more:hover {
+  background: steelblue;
+  color: white;
+  transition: 0.25s;
+}
+
+.konten .konten-utama .postingan .gambar-postingan {
+  width: 40%;
+  height: 100%;
+  float: left;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.konten .konten-utama .postingan .preview-postingan {
+  width: 60%;
+  padding: 15px;
+  float: right;
+}
+
+.konten .konten-utama .postingan .preview-postingan h2 a {
+  text-decoration: none;
+  color: white;
+}
+
+.konten .konten-utama .postingan .preview-postingan i {
+  color: white;
+  font-size: 0.8em;
+}
+
+.konten .konten-utama .postingan .preview-postingan {
+  line-height: 1.5em;
+  font-size: 1.03em;
+  color: white;
+}
+
+.btn-baca {
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: white;
+}
+
+.konten .konten-utama .judul-postingan-baru {
+  margin: 20px;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Konten Sampingan */
+.konten .konten-sampingan {
+  width: 30%;
+  float: left;
+  height: 300px;
+}
+
+.konten .konten-sampingan .section {
+  background: steelblue;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.konten .konten-sampingan .section .judul-section {
+  margin: 10px 0px 10px 0px;
+}
+
+.konten .konten-sampingan .section.pencarian {
+  margin-top: 93px;
+  color: white;
+}
+
+.konten .konten-sampingan .section.kategories .judul-section {
+  color: white;
+}
+
+.konten .konten-sampingan .section.kategories ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  border-top: 1px solid #e0e0e0;
+}
+
+.konten .konten-sampingan .section.kategories ul li a {
+  display: block;
+  padding: 15px 0px 15px 0px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: white;
+}
+
+.konten .konten-sampingan .section.kategories ul li a:hover {
+  padding-left: 10px;
+  transition: all 0.3s;
+}
+
+/* Single Konten */
+.konten .konten-utama.single {
+  background: steelblue;
+  padding: 20px 50px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+.konten .konten-utama.single .konten-postingan {
+  color: white;
+  min-height: 900px;
+}
+
+.konten .konten-sampingan.single {
+  padding: 0px 10px;
+  color: white;
+}
+
+.konten .konten-utama.single .judul-postingan {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.konten .postingan-populer .postingan {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.konten .postingan-populer .postingan a {
+  text-decoration: none;
+  color: white;
+}
+
+.konten .postingan-populer .postingan a h4 {
+  margin-top: 15px;
+}
+
+.konten .postingan-populer .postingan img {
+  height: 60px;
+  width: 75px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* Bagian Komentar Reader */
+
+.konten .konten-sampingan .postingan.clearfix .judul-komen {
+  color: white;
+  font-size: 25px;
+}
