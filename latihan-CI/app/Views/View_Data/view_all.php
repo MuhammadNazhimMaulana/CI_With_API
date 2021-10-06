@@ -8,7 +8,7 @@
     <div class="card text-dark bg-light mb-3">
       <div class="card-header"></div>
       <div class="card-body">
-        <a href="<?= site_url('admin/posts/create') ?>" class="btn btn-success">Tambah Postingan</a>
+        <a href="<?= site_url('Admin/Data_A/insert') ?>" class="btn btn-success">Tambah Postingan</a>
         <h5 class="card-title text-center">Daftar Seluruh Postingan</h5>
 
         <table class="table text-center">

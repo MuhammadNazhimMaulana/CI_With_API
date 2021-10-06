@@ -128,4 +128,42 @@ class Data_A extends BaseController
         return view('View_Data/view_specific', $data);
 
     }
+
+    public function insert()
+    {
+        $data_insert = [
+            'title' => 'Insert Data Using Curl'
+        ];
+
+
+        if($this->request->getPost())
+        {
+            $url = "https://jsonplaceholder.typicode.com/posts";
+            
+            $data_array = array(    
+                'title' => $this->request->getPost('title'),
+                'body' => $this->request->getPost('body'),
+                'userId' => $this->request->getPost('userId')
+            );
+            
+            $data = http_build_query($data_array);
+            
+            $curl = curl_init();
+            
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            
+            $resp = curl_exec($curl);
+
+            $respon = [
+                'title' => 'Hasil Input',
+                'datas' => $resp
+            ];
+
+        }
+
+        return view('View_Data/insert_data', $data_insert);
+    }
 }
