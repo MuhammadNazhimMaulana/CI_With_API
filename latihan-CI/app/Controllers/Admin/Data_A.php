@@ -67,7 +67,65 @@ class Data_A extends BaseController
             'title' => 'View Data API'
         ];
 
-        return view('View_Data/view_all.php', $data);
+        return view('View_Data/view_all', $data);
+
+    }
+
+    public function ketiga()
+    {
+        // Get cURL resource
+        $curl = curl_init();
+        // Set some options - we are passing in a useragent too here
+        curl_setopt_array($curl, array(
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => 'https://jsonplaceholder.typicode.com/posts?userId=1',
+            CURLOPT_USERAGENT => 'Codular Sample cURL Request'
+        ));
+        // Send the request & save response to $resp
+        $resp = curl_exec($curl);
+
+        // Json Decode
+        $decode = json_decode($resp);
+
+        // Close request to clear up some resources
+        curl_close($curl);
+
+        $data = [
+            'datas' => $decode,
+            'title' => 'View Data API'
+        ];
+
+        return view('View_Data/view_all', $data);
+
+    }
+
+    public function view()
+    {
+        $id = $this->request->uri->getSegment(4);
+
+        // Get cURL resource
+        $curl = curl_init();
+        // Set some options - we are passing in a useragent too here
+        curl_setopt_array($curl, array(
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => 'https://jsonplaceholder.typicode.com/posts/'.$id,
+            CURLOPT_USERAGENT => 'Codular Sample cURL Request'
+        ));
+        // Send the request & save response to $resp
+        $resp = curl_exec($curl);
+
+        // Json Decode
+        $decode = json_decode($resp);
+
+        // Close request to clear up some resources
+        curl_close($curl);
+
+        $data = [
+            'datas' => $decode,
+            'title' => 'View Data Spesifik API'
+        ];
+
+        return view('View_Data/view_specific', $data);
 
     }
 }
