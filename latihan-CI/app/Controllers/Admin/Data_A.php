@@ -199,28 +199,32 @@ class Data_A extends BaseController
 
         if($this->request->getPost())
         {
-            $url = "https://jsonplaceholder.typicode.com/posts";
+            $id = $this->request->getPost('id');
+
+            $url = "https://jsonplaceholder.typicode.com/posts/". $id;
     
             $data_array = array(    
-                'name' => $_POST['name'],
-                'job' => $_POST['job']
+                'id' => $this->request->getPost('id'),
+                'title' => $this->request->getPost('title'),
+                'body' => $this->request->getPost('body'),
+                'userId' => $this->request->getPost('userId')
             );
             
             $data = http_build_query($data_array);
             
-            $ch = curl_init();
+            $curl = curl_init();
             
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PUT');
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             
-            $resp = curl_exec($ch);
+            $resp = curl_exec($curl);
 
             $respons = json_decode($resp, true);
 
             $respon = [
-                'title' => 'Hasil Input',
+                'title' => 'Hasil Update',
                 'datas' => $respons
             ];
 
@@ -229,5 +233,50 @@ class Data_A extends BaseController
         }
 
         return view('View_Data/update_data', $data_update);
+    }
+
+    public function delete()
+    {
+        $id = $this->request->uri->getSegment(4);
+
+        $url = "https://jsonplaceholder.typicode.com/posts/". $id;
+          
+        $curl = curl_init();
+        
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        
+        $resp = curl_exec($curl);
+
+        $respons = json_decode($resp, true);
+
+        session()->setFlashdata('pesan', 'Berhasil Hapus Data');
+
+        // Dapatkan Data
+
+        // Get cURL resource
+        $curl = curl_init();
+        // Set some options - we are passing in a useragent too here
+        curl_setopt_array($curl, array(
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => 'https://jsonplaceholder.typicode.com/posts?userId=1',
+            CURLOPT_USERAGENT => 'Codular Sample cURL Request'
+        ));
+        // Send the request & save response to $resp
+        $resp = curl_exec($curl);
+
+        // Json Decode
+        $decode = json_decode($resp);
+
+        // Close request to clear up some resources
+        curl_close($curl);
+
+        $data = [
+            'datas' => $decode,
+            'title' => 'View Data After Delete'
+        ];
+
+        return view('View_Data/view_all', $data);
     }
 }

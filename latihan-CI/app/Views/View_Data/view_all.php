@@ -3,6 +3,8 @@
 
 <h1>Testing</h1>
 
+<?php $session = session();?>
+
 <div class="row mt-5">
   <div class="col-md-12">
     <div class="card text-dark bg-light mb-3">
@@ -10,7 +12,12 @@
       <div class="card-body">
         <a href="<?= site_url('Admin/Data_A/insert') ?>" class="btn btn-success">Tambah Postingan</a>
         <h5 class="card-title text-center">Daftar Seluruh Postingan</h5>
-
+        <?php if($session->get('pesan')): ?>
+          <div class="alert alert-success alert-dismissible fade show" role="alert" style="width: auto;">
+            <strong><?= session()->getFlashdata('pesan') ?></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <?php endif; ?>
         <table class="table text-center">
           <thead>
             <tr>
@@ -56,7 +63,7 @@
                       </div>
                        <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                          <button class="btn btn-danger"><a href="<?= site_url('Admin/Data_A/update/' . $posts->id) ?>">Delete</a></button>
+                          <button class="btn btn-danger"><a href="<?= site_url('Admin/Data_A/delete/' . $posts->id) ?>">Delete</a></button>
                         </div>
                   </div>
               </div>

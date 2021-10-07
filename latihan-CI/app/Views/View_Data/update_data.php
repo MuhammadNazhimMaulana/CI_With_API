@@ -24,6 +24,15 @@
         'value' => $datas->userId,
         'class' => 'form-control'
     ];
+
+    $id = [
+        'name' => 'id',
+        'id' => 'id',
+        'type' => 'hidden',
+        'readonly' => true,
+        'value' => $datas->id,
+        'class' => 'form-control'
+    ];
     
     $submit = [
         'name' => 'submit',
@@ -69,13 +78,17 @@ $errors = $session->getFlashdata('errors');
                         </div>
 
                         <div class="form-group mt-3">
-                                <?= form_label("Isi Tulisan", "body") ?>
-                                <?= form_textarea($body) ?>
+                            <?= form_label("Isi Tulisan", "body") ?>
+                            <?= form_textarea($body) ?>
                         </div>
 
                         <div class="form-group mt-3">
-                                <?= form_label("Nomor Penulis", "userId") ?>
-                                <?= form_input($userId) ?>
+                            <?= form_label("Nomor Penulis", "userId") ?>
+                            <?= form_input($userId) ?>
+                        </div>
+
+                        <div class="form-group mt-3">                        
+                            <?= form_input($id) ?>
                         </div>
 
                         <div class="d-flex justify-content-end mt-3">
