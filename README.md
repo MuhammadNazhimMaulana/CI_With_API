@@ -1,4 +1,4 @@
-# CI With API
+# Code Igniter With API
 
 - English
   This is the implementation of using API in a simple CI Project
