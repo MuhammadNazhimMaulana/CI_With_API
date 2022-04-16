@@ -1,7 +1,7 @@
 # CodeIgniter With API
 
 - English
-  This is the implementation of using API in a simple CI Project
+  This is the implementation of using API in a simple CI Project and I'll do much more
 
 - Indonesia  
-  Ini merupakan implementasi dari penggunaan api dalam sebuah projek dengan menggunakan framework CI yang sederhana
+  Ini merupakan implementasi dari penggunaan api dalam sebuah projek dengan menggunakan framework CI yang sederhana dan saya akan tingkatkan lagi terus
